@@ -1,0 +1,60 @@
+# ======================================================
+# devstack.json.config
+# ------------------------------------------------------
+# implementation for a devstack configuration file.
+# You must create a proper configuration file and supply
+# the correct values for your Environment(s)
+# ======================================================
+
+[marshalling]
+serialize_format=json
+deserialize_format=json
+
+[user_auth_config]
+endpoint=http://192.168.11.22:5000
+strategy=keystone
+
+[compute_admin_auth_config]
+endpoint=http://192.168.11.22:5000
+strategy=keystone
+
+[compute]
+hypervisor=qemu
+
+[compute_endpoint]
+region=RegionOne
+compute_endpoint_name=nova
+
+[compute_admin_endpoint]
+region=RegionOne
+compute_endpoint_name=nova
+
+[user]
+# This should not be an admin user
+username=demo
+password=password
+tenant_name=demo
+
+[compute_admin_user]
+username=admin
+password=password
+tenant_name=admin
+
+[flavors]
+primary_flavor=42
+
+[images]
+primary_image=PUT_YOUR_IMAGE_ID_HERE
+image_status_interval=15
+snapshot_timeout=900
+can_get_deleted_image=false
+
+[servers]
+server_status_interval=15
+server_build_timeout=600
+server_resize_timeout=1800
+network_for_ssh=public
+ip_address_version_for_ssh=4
+instance_disk_path=/dev/xvda
+connection_retry_interval=15
+connection_timeout=600
