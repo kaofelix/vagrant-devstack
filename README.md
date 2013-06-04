@@ -18,8 +18,8 @@ you can `vagrant ssh` and `tail -f /var/log/devstack.log` to check
 progress of the devstack installation.
 
 
-Running CloudCAFE Tests
------------------------
+CloudCAFE Tests
+---------------
 
 It's recommended to make a virtualenv to install CloudCAFE and it's
 dependencies in. After you create and activate the virtualenv, you
@@ -43,7 +43,7 @@ that you can easily find on the file searching for
 `PUT_YOUR_IMAGE_ID_HERE`. Replace the placeholder by a valid image id
 for you devstack.
 
-## Getting an image id
+### Getting an image id
 
 * With your vagrant box up, visit http://192.168.11.22 in your
   browser. You should see the login page for the OpenStack Dashboard. 
@@ -54,7 +54,7 @@ for you devstack.
 * Copy the value under *ID*. It should look similar to
   `66bf4aaf-67cf-4d43-964b-a5cd3dabeab1`
 
-## Running CloudCAFE tests
+### Running tests
 
 Save the config file with the right image value to
 `~/.cloudcafe/configs/compute/devstack.json.config` and you should be
